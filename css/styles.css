@@ -5,6 +5,7 @@
   --brand-color-bg: #2f303a;
   --bgcolor-primary: #ffffff;
   --bgcolor-secondary: #f5f4fa;
+  --social-icon-color: #AFB1B8;
   --gap: 30px;
 }
 
@@ -123,6 +124,11 @@ h6 {
   letter-spacing: 0.02em;
 }
 
+.contacts .item{
+  display: flex;
+  align-items: center;
+}
+
 .contacts .item:not(:last-child) {
   margin-right: 50px;
 }
@@ -140,17 +146,26 @@ h6 {
   color: var(--text-color-secondary);
 }
 
-.contacts .link:hover,
-.contacts .link:focus {
-  color: var(--brand-color-accent);
+.contacts .icon {
+  fill: var(--text-color-secondary);
+  margin-right: 10px;
 }
+
+.link:hover .icon {
+  fill: var(--brand-color-accent);
+}
+
 
 /*Hero*/
 
 .hero {
+  max-width: 1600px;
+  max-height: 600px;
   padding: 200px 0;
-  background-color: var(--brand-color-bg);
   text-align: center;
+  background-image: linear-gradient( to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), 
+  url(../images/hero-background.jpg);
+  
 }
 
 .hero-title {
@@ -218,9 +233,14 @@ h6 {
 .features .item{
   flex-basis: calc((100% - (3 * var(--gap)))/4)
 }
-/* .features .item:nth-child(4n) {
-  margin-right: 0;
-} */
+
+.features .icon{
+  content: "";
+  background: #F5F4FA;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+}
 
 .features-title {
   font-weight: 700;
@@ -258,10 +278,6 @@ h6 {
   background-color: var(--bgcolor-secondary);
 }
 
-/* .team .cards:nth-child(4n){
-  margin-right: 0;
-} */
-
 .team .cards{
 flex-basis: calc((100% - (3 * var(--gap)))/4);
 }
@@ -289,6 +305,34 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
   color: var(--text-color-secondary);
 }
 
+.cards .icon{
+  display: flex;
+}
+
+.icon-list .item{
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.icon-list .item:not(:last-child){
+  margin-right: 10px;
+}
+
+.icon-list .icon{
+  contain: "";
+  width: 20px;
+  height: 20px;
+  fill: var(--social-icon-color);
+  background-color: var(--bgcolor-primary);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.icon-list .icon:hover,
+.icon-list .icon:focus{
+  background-color: var(--brand-color-accent);
+  fill: var(--bgcolor-primary);
+}
 /*Footer*/
 
 .footer {
