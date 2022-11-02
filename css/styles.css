@@ -6,6 +6,7 @@
   --bgcolor-primary: #ffffff;
   --bgcolor-secondary: #f5f4fa;
   --social-icon-color: #AFB1B8;
+  --white-color:#ffffff;
   --gap: 30px;
 }
 
@@ -146,12 +147,13 @@ h6 {
   color: var(--text-color-secondary);
 }
 
-.contacts .icon {
+.contacts-icon {
   fill: var(--text-color-secondary);
   margin-right: 10px;
 }
 
-.link:hover .icon {
+.link:hover .contacts-icon,
+.link:focus .contacts-icon {
   fill: var(--brand-color-accent);
 }
 
@@ -234,14 +236,6 @@ h6 {
   flex-basis: calc((100% - (3 * var(--gap)))/4)
 }
 
-.features .icon{
-  content: "";
-  background: #F5F4FA;
-  border-radius: 4px;
-  margin-bottom: 30px;
-  padding: 25px 100px;
-}
-
 .features-title {
   font-weight: 700;
   font-size: 14px;
@@ -259,6 +253,13 @@ h6 {
   color: #757575;
 }
 
+.features .icon{
+  contain: "";
+  background-color: var(--bgcolor-secondary);
+  border-radius: 4px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+}
 /*Work*/
 
 .work {
@@ -285,10 +286,16 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 .cards {
   background-color: var(--bgcolor-primary);
   text-align: center;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+  0px 1px 1px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .cards-text {
-  padding: 30px 0;
+  padding-top: 30px;
+  margin-bottom: 16px;
 }
 
 .cards-title {
@@ -305,39 +312,62 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
   color: var(--text-color-secondary);
 }
 
-.cards .icon{
+.cards-icon{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 32px;
+  margin-bottom: 30px;
 }
 
-.icon-list .item{
-  margin: 0 auto;
-  padding-bottom: 30px;
+.cards-icon .item{
+  width: 44px;
+  height: 44px;
 }
 
-.icon-list .item:not(:last-child){
+.cards-icon .link{
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+    
+  color: var(--social-icon-color);
+  background-color: var(--bgcolor-primary);
+}
+
+.cards-icon .item:not(:last-child){
   margin-right: 10px;
 }
 
-.icon-list .icon{
-  contain: "";
-  width: 20px;
-  height: 20px;
-  fill: var(--social-icon-color);
-  background-color: var(--bgcolor-primary);
-  padding: 12px;
-  border-radius: 50%;
+.cards-icon .icon {
+  margin-top: 12px;
+  fill: currentColor;
 }
 
-.icon-list .icon:hover,
-.icon-list .icon:focus{
+.cards-icon .link:hover,
+.cards-icon .link:focus {
+  color: var(--bgcolor-primary);
   background-color: var(--brand-color-accent);
-  fill: var(--bgcolor-primary);
 }
+
+
+/* Clients */
+
+.clients{
+  display: flex;
+}
+
 /*Footer*/
 
 .footer {
   padding: 60px 0;
   background-color: var(--brand-color-bg);
+}
+
+.footer-flex{
+  display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .address {
@@ -359,6 +389,63 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 .link:hover,
 .link:focus {
   color: var(--brand-color-accent);
+}
+
+
+.social-uptitle{
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  
+    color: #FFFFFF;
+
+}
+
+.footer-social{
+  margin-left: 70px;
+  
+}
+
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon .item {
+  width: 44px;
+  height: 44px;
+}
+
+.footer-icon .link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: var(--bgcolor-primary);
+  background-color: rgba(255, 255, 255, 0.1);;
+}
+
+.footer-icon .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-icon .icon {
+  margin-top: 12px;
+  margin-left: 12px;
+  fill: currentColor;
+}
+
+.footer-icon .link:hover,
+.footer-icon .link:focus {
+  color: var(--bgcolor-primary);
+  background-color: var(--brand-color-accent);
 }
 
 /*Portfolio*/
@@ -428,4 +515,10 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 
 .gallery .item{
   flex-basis: calc((100% - (2 * var(--gap))) / 3);
+}
+
+.gallery .item:hover,
+.gallery .item:focus{
+  border: 1px solid #EEEEEE;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
