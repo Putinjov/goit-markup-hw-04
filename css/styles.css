@@ -7,6 +7,7 @@
   --bgcolor-secondary: #f5f4fa;
   --social-icon-color: #AFB1B8;
   --white-color:#ffffff;
+  --border-solid-color: #eeeeee;
   --gap: 30px;
 }
 
@@ -353,8 +354,36 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 
 /* Clients */
 
-.clients{
+.clients-list{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clients-list .item{
+  width: 170px;
+  height: 92px;
+}
+.clients-list .link{
+    display: block;
+      width: 170px;
+      height: 92px;
+      border: 1px solid #AFB1B8;
+      border-radius: 4px;
+    
+      color: var(--social-icon-color);
+}
+
+.clients-list .icon{
+  margin-top: 16px;
+  margin-left: 32px;
+  fill: currentColor;
+}
+
+.clients-list .link:hover,
+.clients-list .link:focus{
+  color: var(--brand-color-accent);
+  border: 1px solid var(--brand-color-accent);
 }
 
 /*Footer*/
@@ -375,7 +404,7 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
   font-style: normal;
   font-size: 14px;
   line-height: 1.7;
-  color: #ffffff;
+  color: var(--white-color);
 }
 
 .address .link {
@@ -401,7 +430,7 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
     letter-spacing: 0.03em;
     text-transform: uppercase;
   
-    color: #FFFFFF;
+    color: var(--white-color);
 
 }
 
@@ -428,7 +457,7 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
   height: 44px;
   border-radius: 50%;
 
-  color: var(--bgcolor-primary);
+  color: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);;
 }
 
@@ -479,8 +508,11 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 
 .filter-button:hover,
 .filter-button:focus {
-  color: #ffffff;
+  color: var(--white-color);
   background-color: var(--brand-color-accent);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+   0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Gallery */
@@ -508,9 +540,9 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 
 .gallery .text {
   padding: 20px 24px;
-    border-left: 1px solid #eeeeee;
-      border-right: 1px solid #eeeeee;
-      border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid var(--border-solid-color);
+      border-right: 1px solid var(--border-solid-color);
+      border-bottom: 1px solid var(--border-solid-color);
 }
 
 .gallery .item{
@@ -519,6 +551,6 @@ flex-basis: calc((100% - (3 * var(--gap)))/4);
 
 .gallery .item:hover,
 .gallery .item:focus{
-  border: 1px solid #EEEEEE;
+  border: 1px solid var(--border-solid-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
